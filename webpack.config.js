@@ -109,10 +109,10 @@ module.exports = {
          'css-loader',
          {
            loader: "sass-loader",
-           query: {
-            // Enable sourcemaps for resolve-url-loader to work properly
-            sourceMap: true
-          }
+          //  query: {
+          //   // Enable sourcemaps for resolve-url-loader to work properly
+          //   sourceMap: true
+          // }
          }
        ]
      },
@@ -122,7 +122,7 @@ module.exports = {
          {
            loader: 'url-loader',
            options: {
-             limit: 8192,
+             limit: 100000,
            },
          },
        ],
