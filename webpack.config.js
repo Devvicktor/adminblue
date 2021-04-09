@@ -65,7 +65,7 @@ module.exports = {
     }),
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".mjs"],
     alias: {
       Assets: path.resolve(__dirname, "src/assets/"),
     },
