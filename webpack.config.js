@@ -126,12 +126,14 @@ module.exports = {
      },
      {
          test: /\.(woff|woff2|eot|ttf|svg)$/,
-         use:[{
+         use:[
+           {
            loader:'url-loader',
-           options:{
-            limit=100000
-           }
-         }]
+           options: {
+            limit= 8192,
+           },
+         },
+        ],
      },
     //  { // config for fonts
     //    test: /\.(woff|woff2|eot|ttf|otf)$/,
