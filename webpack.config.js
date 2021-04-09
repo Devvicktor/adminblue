@@ -54,9 +54,9 @@ module.exports = {
  },
  devServer: {
   contentBase: './src/index.js',
-  host: '0.0.0.0',
+  host: 'localhost',
   compress: true,
-  port: 8001, // port number
+  port: 5000, // port number
   historyApiFallback: true,
   quiet: true
 },
@@ -65,8 +65,8 @@ module.exports = {
   config: JSON.stringify({
       apiUrl: '',
       imageapiUrl: '',
-      
-      publicPath : '/blue'            
+
+      publicPath : '/blue'
   })
 },
  resolve: {
@@ -139,7 +139,7 @@ performance: {
   hints: process.env.NODE_ENV === 'production' ? "warning" : false
 },
     plugins: [
-      
+
       new HtmlWebpackPlugin({
         template: "./public/index.html",
         filename: "./index.html",
