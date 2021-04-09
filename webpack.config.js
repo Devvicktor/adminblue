@@ -84,13 +84,16 @@ module.exports = {
      { // config for es6 jsx
        test: /\.(js|jsx)$/,
        exclude: /node_modules/,
-      //  use: {
-      //    loader: "babel-loader"
-      //  },
-       loader: 'babel-loader',
-       options:{
+       use: {
+         loader: "babel-loader",
+         options:{
          presets: ['@babel/preset-env']
-       }
+       },
+       },
+
+
+
+
 
      },
      {
@@ -105,7 +108,11 @@ module.exports = {
          },
          'css-loader',
          {
-           loader: "sass-loader"
+           loader: "sass-loader",
+           query: {
+            // Enable sourcemaps for resolve-url-loader to work properly
+            sourceMap: true
+          }
          }
        ]
      },
