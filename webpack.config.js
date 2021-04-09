@@ -114,7 +114,10 @@ module.exports = {
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url'
+        exclude: /node_modules/,
+        use: {
+          loader: "url-loader?limit=1024&name=/fonts/[name].[ext]",
+        },
       },
       //  { // config for fonts
       //    test: /\.(woff|woff2|eot|ttf|otf)$/,
