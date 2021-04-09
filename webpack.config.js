@@ -109,10 +109,7 @@ module.exports = {
          'css-loader',
          {
            loader: "sass-loader",
-          //  query: {
-          //   // Enable sourcemaps for resolve-url-loader to work properly
-          //   sourceMap: true
-          // }
+
          }
        ]
      },
@@ -121,15 +118,20 @@ module.exports = {
        use: [
          {
            loader: 'url-loader',
-          //  options: {
-          //    limit: 100000,
-          //  },
+           options: {
+             limit: 8192,
+           },
          },
        ],
      },
      {
          test: /\.(woff|woff2|eot|ttf|svg)$/,
-         loader: 'url-loader?limit=100000'
+         use:[{
+           loader:'url-loader',
+           options:{
+            limit=100000
+           }
+         }]
      },
     //  { // config for fonts
     //    test: /\.(woff|woff2|eot|ttf|otf)$/,
